@@ -1,0 +1,17 @@
+altair
+bokeh
+graphviz
+Jinja2
+MarkupSafe
+matplotlib
+numpy
+pandas
+Pillow
+plotly
+pydeck
+requests
+scikit-learn
+seaborn
+streamlit
+streamlit-lottie
+watchdog
