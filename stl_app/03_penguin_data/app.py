@@ -30,18 +30,36 @@ if penguin_file is not None:
 else:
     st.stop()
 
-#st.subheader('ข้อมูลตัวอย่าง')
-# st.write(penguins_df)
+# #st.subheader('ข้อมูลตัวอย่าง')
+# # st.write(penguins_df)
+# st.subheader('แสดงผลข้อมูล')
+# sns.set_style('darkgrid')
+# markers = {"Adelie": "v", "Gentoo": "s", "Chinstrap": 'o'}
+#
+# fig, ax = plt.subplots()
+# ax = sns.scatterplot(data=penguins_df,
+#                      x=selected_x_var, y=selected_y_var,
+#                      hue='species', markers=markers, style='species')
+# plt.xlabel(selected_x_var)
+# plt.ylabel(selected_y_var)
+# plt.title("Palmer's Penguins Data")
+# st.pyplot(fig)
 
-st.subheader('แสดงผลข้อมูล')
-sns.set_style('darkgrid')
-markers = {"Adelie": "v", "Gentoo": "s", "Chinstrap": 'o'}
+# altair scatter plot
+import altair as alt
+data=penguins_df
+chart = alt.Chart(data).mark_circle().encode(
+    x=selected_x_var,
+    y=selected_y_var,
+    color='species',
+).interactive()
 
-fig, ax = plt.subplots()
-ax = sns.scatterplot(data=penguins_df,
-                     x=selected_x_var, y=selected_y_var,
-                     hue='species', markers=markers, style='species')
-plt.xlabel(selected_x_var)
-plt.ylabel(selected_y_var)
-plt.title("Palmer's Penguins Data")
-st.pyplot(fig)
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Altair native theme"])
+
+with tab1:
+    # Use the Streamlit theme.
+    # This is the default. So you can also omit the theme argument.
+    st.altair_chart(chart, theme="streamlit", use_container_width=True)
+with tab2:
+    # Use the native Altair theme.
+    st.altair_chart(chart, theme=None, use_container_width=True)
