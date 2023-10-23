@@ -16,12 +16,12 @@ choices = ['bill_length_mm',
 option = st.selectbox(
     'What do you want to select x?',
     (choices))
-st.write('X is : ', option)
+st.write('x is : ', option)
 
 option = st.selectbox(
-    'What do you want to select Y?',
+    'What do you want to select y?',
     (choices))
-st.write('Y is : ', option)
+st.write('y is : ', option)
 
 
 # https://docs.streamlit.io/library/api-reference/widgets/st.file_uploader
