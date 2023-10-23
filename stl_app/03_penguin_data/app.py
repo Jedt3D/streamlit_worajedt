@@ -30,7 +30,7 @@ if penguin_file is not None:
 else:
     st.stop()
 
-st.subheader('ข้อมูลตัวอย่าง')
+#st.subheader('ข้อมูลตัวอย่าง')
 # st.write(penguins_df)
 
 st.subheader('แสดงผลข้อมูล')
