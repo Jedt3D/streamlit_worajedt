@@ -9,7 +9,7 @@ st.markdown('สร้าง `scatter plot` แสดงผลข้อมูล
 choices = ['sepal.length',
            'sepal.width',
            'petal.length',
-           'petal.width	variety']
+           'petal.width']
 
 
 # https://docs.streamlit.io/library/api-reference/widgets/st.selectbox
@@ -24,7 +24,7 @@ iris_file = None
 iris_file = st.file_uploader("Choose a CSV file", accept_multiple_files=False)
 
 if iris_file is not None:
-    penguins_df = pd.read_csv(iris_file)
+    iris_df = pd.read_csv(iris_file)
 else:
     st.stop()
 
@@ -33,12 +33,12 @@ st.subheader('ข้อมูลตัวอย่าง')
 
 st.subheader('แสดงผลข้อมูล')
 sns.set_style('darkgrid')
-markers = {"Adelie": "v", "Gentoo": "s", "Chinstrap": 'o'}
+markers = {"Setosa": "v", "Setosa": "s", "Versicolor": 'o'}
 
 fig, ax = plt.subplots()
-ax = sns.scatterplot(data=penguins_df,
+ax = sns.scatterplot(data=iris_df,
                      x=selected_x_var, y=selected_y_var,
-                     hue='species', markers=markers, style='species')
+                     hue='variety', markers=markers, style='variety')
 plt.xlabel(selected_x_var)
 plt.ylabel(selected_y_var)
 plt.title("iris Data")
