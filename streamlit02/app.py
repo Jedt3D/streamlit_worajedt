@@ -50,7 +50,7 @@ with col3:
     st.area_chart(df_dbh_grouped)
 st.divider()
 
----------------Create tab-------------------------
+#---------------Create tab-------------------------
 tab1,tab2,tab3 = st.tabs(["Line", "Bar", "Area"])
 with tab1:
     st.write('Column1')
