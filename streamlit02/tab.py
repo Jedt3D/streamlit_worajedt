@@ -35,16 +35,16 @@ tree_df = tree_df.query(query)
 df_dbh_grouped = pd.DataFrame(tree_df.groupby(['dbh']).count()['tree_id'])
 df_dbh_grouped.columns = ['tree_count']
 
-#---------------Create column-------------------------
+#---------------Create tab-------------------------
 
-col1, col2, col3 = st.columns(3)
-with col1:
+tab1,tab2,tab3 = st.tabs(["Line", "Bar", "Area"])
+with tab1:
     st.write('Column1')
     st.line_chart(df_dbh_grouped)
-with col2:
+with tab2:
     st.write('Column2')
     st.bar_chart(df_dbh_grouped)
-with col3:
+with tab3:
     st.write('Column3')
     st.area_chart(df_dbh_grouped)
 st.divider()
