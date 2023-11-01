@@ -4,16 +4,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from st_pages import Page, show_pages
 
-st.set_page_config(layout='wide')
+# st.set_page_config(layout='wide')
 
 # Create pages
-show_pages(
-    [
+show_pages([
         Page('app.py', 'Home','🏠'),
-        Page('pages/tab.py', 'Layout','📈')
+        Page('tab.py', 'Chart','📈')
         # Page('pages/map.py', 'Map','🌍')
-    ]
-)
+          ])
 
 
 st.markdown('สวัสดี! *Streamlit*')
