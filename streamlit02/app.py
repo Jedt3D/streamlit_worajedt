@@ -8,20 +8,12 @@ from st_pages import Page, show_pages, add_page_title
 #---------------Create page-------------------------
 add_page_title()
 st.set_page_config(layout='wide')
+
 show_pages([
         Page('app.py', 'Home','🏠'),
         Page('tab.py', 'Tab','📈')
         # Page('pages/map.py', 'Map','🌍')
           ])
-[[pages]]
-path = 'app.py'
-name = 'Home'
-icon = '🏠'
-[[pages]]
-path = 'tab.py'
-name = 'Tab'
-icon = '📈'
-
 
 st.markdown('สวัสดี! *Streamlit*')
 st.title('Layout and Decoration')
@@ -43,8 +35,8 @@ tree_df = tree_df.query(query)
 df_dbh_grouped = pd.DataFrame(tree_df.groupby(['dbh']).count()['tree_id'])
 df_dbh_grouped.columns = ['tree_count']
 
-
 #---------------Create column-------------------------
+st.set_page_config(page_title="Home", page_icon="🏠")
 col1, col2, col3 = st.columns(3)
 with col1:
     st.write('Column1')
@@ -58,6 +50,7 @@ with col3:
 st.divider()
 
 #---------------Create tab-------------------------
+st.set_page_config(page_title="Tab", page_icon="📈")
 tab1,tab2,tab3 = st.tabs(["Line", "Bar", "Area"])
 with tab1:
     st.write('Column1')
