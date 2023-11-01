@@ -4,9 +4,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from st_pages import Page, show_pages
 
-# st.set_page_config(layout='wide')
 
-# Create pages
+#---------------Create page-------------------------
+st.set_page_config(layout='wide')
 show_pages([
         Page('app.py', 'Home','🏠'),
         Page('tab.py', 'Chart','📈')
