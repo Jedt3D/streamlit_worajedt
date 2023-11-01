@@ -77,3 +77,10 @@ prediction_species = unique_iris_mapping[new_prediction][0]
 
 st.write('We predict variety is the {}'.format(prediction_species))
 
+fig, ax = plt.subplots()
+ax = sns.barplot(x=rfc.feature_importances_, y=features.columns)
+plt.title('Which features are the most important for species prediction?')
+plt.xlabel('Importance')
+plt.ylabel('Feature')
+plt.tight_layout()
+fig.savefig('feature_importance.png')
