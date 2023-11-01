@@ -2,16 +2,25 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from st_pages import Page, show_pages
+from st_pages import Page, show_pages, add_page_title
 
 
 #---------------Create page-------------------------
+add_page_title()
 st.set_page_config(layout='wide')
 show_pages([
         Page('app.py', 'Home','🏠'),
-        Page('tab.py', 'Chart','📈')
+        Page('tab.py', 'Tab','📈')
         # Page('pages/map.py', 'Map','🌍')
           ])
+[[pages]]
+path = 'app.py'
+name = 'Home'
+icon = '🏠'
+[[pages]]
+path = 'tab.py'
+name = 'Tab'
+icon = '📈'
 
 
 st.markdown('สวัสดี! *Streamlit*')
