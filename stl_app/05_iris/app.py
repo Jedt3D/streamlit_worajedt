@@ -33,7 +33,7 @@ st.subheader('ข้อมูลตัวอย่าง')
 
 st.subheader('แสดงผลข้อมูล')
 sns.set_style('darkgrid')
-markers = {"Setosa": "v", "Setosa": "s", "Versicolor": 'o'}
+markers = {"Setosa": "v", "Virginica": "s", "Versicolor": 'o'}
 
 fig, ax = plt.subplots()
 ax = sns.scatterplot(data=iris_df,
