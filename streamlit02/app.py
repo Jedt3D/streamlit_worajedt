@@ -6,12 +6,14 @@ from st_pages import Page, show_pages
 
 st.set_page_config(layout='wide')
 
-# ----- Pages -----
+# Create pages
 show_pages(
     [
-        Page('app.py', 'Home',''),
-        Page('pages/tab.py', 'Layout',''),
-        Page('pages/map.py', 'Map','')
+        Page('app.py', 'Home','🏠'),
+        Page('pages/tab.py', 'Layout','📈'),
+        Page('pages/map.py', 'Map','🌍')
+        Page("page2.py", "Page 2", ":blue_book:"),
+        Section(name="Section2", icon=":bar_chart:")
     ]
 )
 
