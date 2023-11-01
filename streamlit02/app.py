@@ -1,4 +1,4 @@
-mport streamlit as st
+import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -14,3 +14,4 @@ with col2:
    st.write('Column2')
 with col3:
    st.write('Column3')
+
