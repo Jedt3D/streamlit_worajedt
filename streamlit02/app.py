@@ -70,7 +70,8 @@ def home_page():
    st.write(""" Let's go """)
 
    df_dbh_grouped = read_data()
-# Create column
+
+   # Create column
    col1, col2, col3 = st.columns(3)
    with col1:
        st.write('Column1')
@@ -81,22 +82,15 @@ def home_page():
    with col3:
        st.write('Column3')
        st.area_chart(df_dbh_grouped)
-   st.divider()
-def tab_page(tree_df):
+
+def tab_page():
    st.markdown(f"# {list(pages.keys())[1]}")
    st.title("About Page")
    st.write("This is the about page of the app.")
 
-   owners = st.sidebar.multiselect("Filter", tree_df['caretaker'].unique())
-   st.sidebar.success("Select filter above.")
-   query = '(index == index or index != index)'
-   if owners != []:
-       query += ' and caretaker in @owners'
-   tree_df = tree_df.query(query)
-   df_dbh_grouped = pd.DataFrame(tree_df.groupby(['dbh']).count()['tree_id'])
-   df_dbh_grouped.columns = ['tree_count']
+   df_dbh_grouped = read_data()
 
-# Create tab
+   # Create tab
    tab1, tab2, tab3 = st.tabs(["Line", "Bar", "Area"])
    with tab1:
        st.write('Column1')
@@ -107,7 +101,8 @@ def tab_page(tree_df):
    with tab3:
        st.write('Column3')
        st.area_chart(df_dbh_grouped)
-   st.divider()
+
+
 def map_page():
    st.title("Contact Page")
    st.write("This is the contact page of the app.")
