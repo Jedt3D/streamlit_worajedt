@@ -15,6 +15,7 @@ def read_data():
    return df_dbh_grouped
 
 df_dbh_grouped = read_data()
+
 df_dbh_grouped1 = df_dbh_grouped.dropna()
 
 df1 = pd.DataFrame(df_dbh_grouped1,columns=['latitude', 'longitude'])
