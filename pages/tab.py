@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+
+
 def read_data():
    tree_df = pd.read_csv('../streamlit02/trees.csv')
    owners = st.sidebar.multiselect("Filter", tree_df['caretaker'].unique())
@@ -11,6 +13,10 @@ def read_data():
    df_dbh_grouped = pd.DataFrame(tree_df.groupby(['dbh']).count()['tree_id'])
    df_dbh_grouped.columns = ['tree_count']
    return df_dbh_grouped
+
+st.title('Tab')
+st.write(""" Welcome to san francisco tree dataset """)
+st.divider()
 
 df_dbh_grouped = read_data()
 # Create tab

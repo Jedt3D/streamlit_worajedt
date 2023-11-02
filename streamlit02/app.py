@@ -5,13 +5,9 @@ import matplotlib.pyplot as plt
 from st_pages import Page, show_pages, add_page_title
 import time
 
-progress_text = "Loading. Please wait."
-my_bar = st.progress(0, text=progress_text)
-for percent_complete in range(100):
-    time.sleep(0.01)
-    my_bar.progress(percent_complete + 1, text=progress_text)
-time.sleep(1)
-my_bar.empty()
+with st.spinner('Wait for it...'):
+    time.sleep(5)
+st.success('Done!')
 st.button("Reload")
 
 # Defind
@@ -34,7 +30,6 @@ show_pages([
         Page('../pages/map.py', 'Map', '🌍')
           ])
 
-st.markdown('Hello everyone have a nice day!!! :balloon:')
 st.title('Home')
 st.write(""" Welcome to san francisco tree dataset """)
 st.divider()
