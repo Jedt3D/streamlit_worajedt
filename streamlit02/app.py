@@ -85,8 +85,8 @@ def home_page():
 
 def tab_page():
    st.markdown(f"# {list(pages.keys())[1]}")
-   st.title("About Page")
-   st.write("This is the about page of the app.")
+   st.title('San Francisco dataset')
+   st.write(""" Let's go """)
 
    df_dbh_grouped = read_data()
 
@@ -104,8 +104,10 @@ def tab_page():
 
 
 def map_page():
-   st.title("Contact Page")
-   st.write("This is the contact page of the app.")
+   st.markdown(f"# {list(pages.keys())[2]}")
+   st.title('San Francisco dataset')
+   st.write(""" Let's go """)
+
 
 # Create a dictionary of pages
 pages = {
@@ -119,3 +121,4 @@ selection = st.sidebar.selectbox("Go to", list(pages.keys()))
 # Display the selected page
 page = pages[selection]
 page()
+
