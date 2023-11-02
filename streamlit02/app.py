@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from st_pages import Page, show_pages, add_page_title
-
+import time
 
 #---------------Create page-------------------------
 #st.set_page_config(layout='wide')
@@ -21,6 +21,10 @@ st.write("""
  เราจะลองทำ San Francisco Dataset กันดู
 """)
 st.divider()
+
+with st.spinner('Loading...'):
+    time.sleep(5)
+# st.success('Done!')
 
 #---------------Read data & filter-------------------------
 tree_df = pd.read_csv('trees.csv')
