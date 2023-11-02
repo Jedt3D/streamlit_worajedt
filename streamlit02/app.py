@@ -6,8 +6,8 @@ from st_pages import Page, show_pages, add_page_title
 
 
 #---------------Create page-------------------------
+#st.set_page_config(layout='wide')
 add_page_title()
-# st.set_page_config(layout='wide')
 
 show_pages([
         Page('app.py', 'Home','🏠'),
@@ -26,6 +26,7 @@ st.divider()
 tree_df = pd.read_csv('trees.csv')
 
 owners = st.sidebar.multiselect("Owner filter", tree_df['caretaker'].unique())
+st.sidebar.success("Select filter above.")
 query = '(index == index or index != index)'
 
 if owners != []:
