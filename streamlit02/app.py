@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from st_pages import Page, show_pages, add_page_title
+from st_pages import Page, show_pages
 
 # Defind
 def filter_data(tree_df):

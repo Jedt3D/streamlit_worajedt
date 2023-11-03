@@ -1,11 +1,9 @@
 import streamlit as st
 import pandas as pd
 
-
-def read_data():
-   tree_df = pd.read_csv('../streamlit02/trees.csv')
-   owners = st.sidebar.multiselect("Filter", tree_df['caretaker'].unique())
-   st.sidebar.success("Select filter above.")
+# Defind
+def filter_data(tree_df):
+   owners = st.sidebar.multiselect("Owner Filter", tree_df['caretaker'].unique())
    query = '(index == index or index != index)'
    if owners != []:
        query += ' and caretaker in @owners'
@@ -18,15 +16,16 @@ st.title('Tab')
 st.write(""" Welcome to san francisco tree dataset """)
 st.divider()
 
-df_dbh_grouped = read_data()
+tree_df = pd.read_csv('trees.csv')
+result = filter_data(tree_df)
 # Create tab
 tab1, tab2, tab3 = st.tabs(["Line", "Bar", "Area"])
 with tab1:
     st.write('Column1')
-    st.line_chart(df_dbh_grouped)
+    st.line_chart(result)
 with tab2:
     st.write('Column2')
-    st.bar_chart(df_dbh_grouped)
+    st.bar_chart(result)
 with tab3:
     st.write('Column3')
-    st.area_chart(df_dbh_grouped)
+    st.area_chart(result)
