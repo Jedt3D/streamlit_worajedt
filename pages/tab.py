@@ -16,9 +16,11 @@ st.title('Tab')
 st.write(""" Welcome to san francisco tree dataset """)
 st.divider()
 
+# Read data
 tree_df = pd.read_csv('trees.csv')
+
+#---------------Create tab-------------------------
 result = filter_data(tree_df)
-# Create tab
 tab1, tab2, tab3 = st.tabs(["Line", "Bar", "Area"])
 with tab1:
     st.write('Column1')
