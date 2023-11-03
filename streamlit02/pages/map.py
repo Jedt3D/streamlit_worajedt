@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 # Read data % filter
-tree_df = pd.read_csv('../trees.csv')
+tree_df = pd.read_csv('trees.csv')
 owners = st.sidebar.multiselect("Filter", tree_df['caretaker'].unique())
 st.sidebar.success("Select filter above.")
 query = '(index == index or index != index)'
