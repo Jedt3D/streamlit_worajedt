@@ -18,8 +18,8 @@ def filter_data(tree_df):
 #---------------Create page-------------------------
 show_pages([
         Page('app.py', 'Home','🏠'),
-        Page('../pages/tab.py', 'Tab', '📈'),
-        Page('../pages/map.py', 'Map', '🌍')
+        Page('pages/tab.py', 'Tab', '📈'),
+        Page('pages/map.py', 'Map', '🌍')
           ])
 st.title('Home')
 st.write(""" Welcome to san francisco tree dataset """)
