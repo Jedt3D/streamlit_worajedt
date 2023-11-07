@@ -2,10 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# Read data % filter
+# Read data & filter data
 tree_df = pd.read_csv('trees.csv')
 owners = st.sidebar.multiselect("Filter", tree_df['caretaker'].unique())
-st.sidebar.success("Select filter above.")
 query = '(index == index or index != index)'
 if owners != []:
     query += ' and caretaker in @owners'
