@@ -1,16 +1,17 @@
 import streamlit as st
 
 st.title('My To-Do List Creator')
-my_todo_list = ["Learn Markdown", "Learn Python", "Learn Streamlit"]
-st.write('My current To-Do list is:', my_todo_list)
+if 'my_todo_list' not in st.session_state:
+    st.session_state.my_todo_list = ["Learn Markdown", "Learn Python", "Learn Streamlit"]
+st.write('My current To-Do list is:', st.session_state.my_todo_list)
 
 new_todo = st.text_input("What do you need to do?")
 
 if st.button('Add the new To-Do item'):
     st.write('Adding a new item to the list')
-    my_todo_list.append(new_todo)
+    st.session_state.my_todo_list.append(new_todo)
 
-st.write('My new To-Do list is:', my_todo_list)
+st.write('My new To-Do list is:', st.session_state.my_todo_list)
 
 # TODO
 # 1. make it save to session state

@@ -17,13 +17,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/stl_app/05_penguin_viz/penguins.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
